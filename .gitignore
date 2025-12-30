@@ -1,0 +1,86 @@
+# =============================================================================
+# BMAD Project .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Node.js
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# -----------------------------------------------------------------------------
+# OS Generated Files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# IDE / Editor
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# -----------------------------------------------------------------------------
+# BMAD Output & Runtime Data
+# -----------------------------------------------------------------------------
+# User-specific workflow outputs (generated content, not source)
+_bmad-output/workflow-outputs/
+_bmad-output/temp/
+
+# Session-specific data (memories, analytics that are user-specific)
+# Uncomment if you want to ignore session data:
+# _bmad-output/bmb-creations/**/data/
+# _bmad-output/bmb-creations/**/*-sidecar/memories.md
+
+# -----------------------------------------------------------------------------
+# Secrets & Credentials
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+secrets.yaml
+config.local.yaml
+
+# API keys that might be stored in module configs
+# (kie_api_key and similar should never be committed)
+
+# -----------------------------------------------------------------------------
+# Build & Package Artifacts
+# -----------------------------------------------------------------------------
+dist/
+build/
+*.tgz
+*.tar.gz
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+logs/
+*.log
+
+# -----------------------------------------------------------------------------
+# INCLUDE: Marketing Agent Team Module (WIP)
+# -----------------------------------------------------------------------------
+# The module itself IS tracked - it's your source code
+# !_bmad-output/bmb-creations/marketing-agent-team/
+
+marketing-content/

@@ -1,0 +1,51 @@
+{
+  "name": "marketing-agent-team",
+  "version": "1.0.0",
+  "description": "Your Complete AI-Powered Marketing Team - 7 specialized agents for brand strategy, content creation, and performance analytics",
+  "main": "index.js",
+  "bin": {
+    "marketing-agent-team": "./install.js"
+  },
+  "scripts": {
+    "install": "node install.js",
+    "postinstall": "node _module-installer/installer.js",
+    "setup": "node setup-dev.js",
+    "dev": "node setup-dev.js"
+  },
+  "keywords": [
+    "bmad",
+    "marketing",
+    "ai-agents",
+    "content-creation",
+    "brand-strategy",
+    "social-media",
+    "digital-marketing"
+  ],
+  "author": "Althio",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5",
+    "yaml": "^2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/marketing-agent-team.git"
+  },
+  "files": [
+    "agents/",
+    "workflows/",
+    "tasks/",
+    "templates/",
+    "data/",
+    "_module-installer/",
+    "module.yaml",
+    "README.md",
+    "install.js",
+    "setup-dev.js",
+    "index.js"
+  ]
+}

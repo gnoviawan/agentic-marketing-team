@@ -1,0 +1,184 @@
+# Marketing Agent Team Module Configuration
+# This file defines installation questions and module configuration values
+
+code: "marketing-agent-team"
+name: "Marketing Agent Team"
+default_selected: false
+
+# Welcome message shown during installation
+prompt:
+  - "Thank you for choosing Marketing Agent Team!"
+  - "Your complete AI-powered marketing team - from brand strategy to multi-platform content creation and performance analytics."
+  - "This module provides 7 specialized agents across 3 tiers (Core, Professional, Enterprise)"
+  - ""
+  - "Tier 1 (Core): Brand Archetype Agent + Content Creation Agent"
+  - "Tier 2 (Professional): Market Research + Competitor Analysis + Analytics"
+  - "Tier 3 (Enterprise): Business Strategy + Campaign Orchestrator"
+
+# Core config values are automatically inherited from installer:
+## user_name
+## communication_language
+## document_output_language
+## output_folder
+
+# ============================================================================
+# CONFIGURATION FIELDS
+# ============================================================================
+# Each field can be:
+# 1. INTERACTIVE (has 'prompt' - asks user during installation)
+# 2. STATIC (no 'prompt' - just uses 'result' value)
+# ============================================================================
+
+# TIER SELECTION - Determines which agents to install
+tier_selection:
+  prompt: "Which tier do you want to install? (You can upgrade later)"
+  default: "core"
+  result: "{value}"
+  single-select:
+    - value: "core"
+      label: "Core (Tier 1) - Brand Archetype + Content Creation agents"
+    - value: "professional"
+      label: "Professional (Tier 2) - Adds Market Research + Competitor Analysis + Analytics"
+    - value: "enterprise"
+      label: "Enterprise (Tier 3) - Adds Business Strategy + Campaign Orchestrator (Full 7-agent system)"
+
+# PLATFORM SELECTION - Multi-select which platforms to enable
+enabled_platforms:
+  prompt: "Which platforms do you want to enable? (Select all that apply)"
+  default: ["tiktok", "instagram", "youtube"]
+  result: "{value}"
+  multi-select:
+    - value: "tiktok"
+      label: "TikTok - Short-form video content"
+    - value: "instagram"
+      label: "Instagram - Reels and feed content"
+    - value: "youtube"
+      label: "YouTube - Shorts and long-form content"
+    - value: "threads"
+      label: "Threads - Text-based conversations"
+    - value: "facebook"
+      label: "Facebook - Community and feed content"
+    - value: "blog"
+      label: "Blog - Long-form written content"
+
+# KIE.AI API KEY - Optional video/image generation
+kie_api_key:
+  prompt: "Enter your kie.ai API key (optional - press Enter to skip if using text-only content)"
+  default: ""
+  result: "{value}"
+  input-type: text
+  optional: true
+
+# CHROME DEVTOOLS MCP SETUP - Confirmation
+chrome_devtools_setup:
+  prompt: |
+    Chrome DevTools MCP Setup:
+
+    This module uses Chrome DevTools MCP for market research and analytics.
+
+    To configure Chrome DevTools MCP:
+    1. Install the chrome-devtools-mcp package: npm install -g @modelcontextprotocol/server-chrome-devtools
+    2. Add to your Claude MCP settings:
+       {
+         "mcpServers": {
+           "chrome-devtools": {
+             "command": "npx",
+             "args": ["@modelcontextprotocol/server-chrome-devtools"]
+           }
+         }
+       }
+    3. Restart Claude Code
+
+    Have you configured Chrome DevTools MCP?
+  default: "not-configured"
+  result: "{value}"
+  single-select:
+    - value: "configured"
+      label: "Yes - Chrome DevTools MCP is configured"
+    - value: "not-configured"
+      label: "No - I'll configure it later (some features will be limited)"
+
+# CONTENT OUTPUT DIRECTORY
+content_output_dir:
+  prompt: "Where should generated content be saved?"
+  default: "{project-root}/marketing-content"
+  result: "{value}"
+  input-type: text
+
+# DEFAULT LANGUAGE
+default_language:
+  prompt: "What language should content be generated in?"
+  default: "English"
+  result: "{value}"
+  input-type: text
+
+# SKILL LEVEL - Nice to have for guidance
+skill_level:
+  prompt: "What is your marketing experience level? (This affects how much guidance is shown)"
+  default: "intermediate"
+  result: "{value}"
+  single-select:
+    - value: "beginner"
+      label: "Beginner - New to marketing, want more guidance"
+    - value: "intermediate"
+      label: "Intermediate - Some marketing experience"
+    - value: "advanced"
+      label: "Advanced - Experienced marketer, minimal guidance needed"
+
+# CONTENT VOLUME MODE
+content_volume_mode:
+  prompt: "How aggressive should content generation be?"
+  default: "standard"
+  result: "{value}"
+  single-select:
+    - value: "conservative"
+      label: "Conservative - Fewer, higher-quality pieces"
+    - value: "standard"
+      label: "Standard - Balanced content volume"
+    - value: "aggressive"
+      label: "Aggressive - Maximum content generation"
+
+# ============================================================================
+# STATIC CONFIGURATION VALUES
+# ============================================================================
+
+# Module version
+module_version:
+  result: "1.0.0"
+
+# Brand profiles directory
+brand_profiles_dir:
+  result: "{project-root}/_bmad/marketing-agent-team/data/brand-profiles"
+
+# Learning data directory
+learning_data_dir:
+  result: "{project-root}/_bmad/marketing-agent-team/data/learning-data"
+
+# Platform configs directory
+platform_configs_dir:
+  result: "{project-root}/_bmad/marketing-agent-team/data/platform-configs"
+
+# Reports directory
+reports_dir:
+  result: "{project-root}/_bmad/marketing-agent-team/data/reports"
+
+# Chrome DevTools setup instructions (for reference)
+chrome_devtools_instructions:
+  result: |
+    Chrome DevTools MCP Setup Instructions:
+
+    1. Install globally: npm install -g @modelcontextprotocol/server-chrome-devtools
+
+    2. Add to Claude MCP config (~/.config/claude-code/mcp_settings.json):
+       {
+         "mcpServers": {
+           "chrome-devtools": {
+             "command": "npx",
+             "args": ["@modelcontextprotocol/server-chrome-devtools"]
+           }
+         }
+       }
+
+    3. Restart Claude Code to load the MCP server
+
+    For more info: https://github.com/modelcontextprotocol/servers/tree/main/src/chrome-devtools

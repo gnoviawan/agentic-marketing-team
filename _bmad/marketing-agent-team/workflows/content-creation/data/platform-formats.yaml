@@ -1,0 +1,389 @@
+---
+# Platform Formats Data
+# Content Creation Workflow
+# This file contains platform-specific guidelines for content generation
+
+platforms:
+  tiktok:
+    name: TikTok
+    type: video-script
+    duration:
+      min: 15
+      max: 60
+      recommended: 30
+    content_style:
+      hook_style: "stop-the-scroll"
+      opening: "3-5 seconds, immediate visual or statement"
+      pacing: "fast, dynamic"
+      transitions: "quick cuts, visual effects"
+    structure:
+      - name: Hook
+        description: "Immediate attention grabber"
+        duration: "3-5 seconds"
+        examples:
+          - "Stop scrolling if you want to..."
+          - "Nobody talks about this but..."
+          - "Here's the secret to..."
+      - name: Content
+        description: "Main value delivery"
+        format: "Scene-by-scene script"
+      - name: Call-to-Action
+        description: "Clear directive"
+        examples:
+          - "Follow for more!"
+          - "Link in bio!"
+          - "Save this for later!"
+      - name: Hashtags
+        count:
+          min: 3
+          max: 5
+        style: "mix of broad and niche"
+    character_limits:
+      caption: 150
+      description: "keep concise"
+    best_practices:
+      - "Use trending sounds when possible"
+      - "Vertical format (9:16)"
+      - "Text overlays for key points"
+      - "Loop-friendly content"
+    viral_patterns:
+      - "Before/after transformations"
+      - "Quick tips and hacks"
+      - "Storytelling with twist"
+      - "Trend jacking with unique angle"
+
+  instagram:
+    name: Instagram Reels
+    type: video-script
+    duration:
+      min: 15
+      max: 90
+      recommended: 30
+    content_style:
+      hook_style: "visual-first aesthetic"
+      opening: "visually striking scene or lifestyle moment"
+      pacing: "moderate, polished"
+      transitions: "smooth, aesthetic-focused"
+    structure:
+      - name: Hook
+        description: "Visually engaging opening"
+        duration: "3-5 seconds"
+        examples:
+          - "Aesthetic reveal"
+          - "Lifestyle moment"
+          - "Product showcase"
+      - name: Content
+        description: "Lifestyle-focused storytelling"
+        format: "Scene-by-scene with visual emphasis"
+      - name: Call-to-Action
+        description: "Engagement-driven"
+        examples:
+          - "Save this for later!"
+          - "Share with someone who needs this!"
+          - "Link in bio for more!"
+      - name: Hashtags
+        count:
+          min: 5
+          max: 10
+        style: "mix of broad, moderate, and niche"
+    character_limits:
+      caption: 2200
+      description: "more space for storytelling"
+    best_practices:
+      - "Vertical format (9:16)"
+      - "High-quality visuals"
+      - "Consistent aesthetic"
+      - "Use Instagram-native music"
+    viral_patterns:
+      - "Aesthetic transformations"
+      - "Behind-the-scenes content"
+      - "Lifestyle inspiration"
+      - "Educational with visual appeal"
+
+  youtube:
+    name: YouTube Shorts
+    type: video-script
+    duration:
+      min: 15
+      max: 60
+      recommended: 60
+    content_style:
+      hook_style: "value proposition upfront"
+      opening: "clear value statement"
+      pacing: "deliberate, educational"
+      transitions: "purposeful, supports learning"
+    structure:
+      - name: Hook
+        description: "Value proposition"
+        duration: "3-5 seconds"
+        examples:
+          - "Here's how to..."
+          - "The truth about..."
+          - "Why nobody..."
+      - name: Content
+        description: "Educational or entertaining"
+        format: "Structured delivery with clear points"
+      - name: Call-to-Action
+        description: "Subscribe-focused"
+        examples:
+          - "Subscribe for more tips!"
+          - "Comment if you want part 2!"
+          - "Check out my channel!"
+      - name: Hashtags
+        count:
+          min: 3
+          max: 5
+        style: "descriptive, topic-focused"
+    character_limits:
+      title: 100
+      description: "unlimited but keep concise"
+    best_practices:
+      - "Vertical format (9:16)"
+      - "Clear value delivery"
+      - "Engaging thumbnails"
+      - "Cross-promote long-form content"
+    viral_patterns:
+      - "How-to tutorials"
+      - "Myth-busting"
+      - "Listicles (top 5, etc.)"
+      - "Unexpected revelations"
+
+  threads:
+    name: Threads
+    type: text-post
+    duration: N/A
+    content_style:
+      hook_style: "conversational opener"
+      opening: "question or statement"
+      pacing: "dialogue-driven"
+      tone: "community-focused, authentic"
+    structure:
+      - name: Hook
+        description: "Conversational opening"
+        examples:
+          - "Unpopular opinion:"
+          - "Can we talk about..."
+          - "Here's something I learned:"
+      - name: Content
+        description: "Community-driven text content"
+        format: "Conversational paragraphs, optionally add image"
+        length: "500 characters recommended"
+      - name: Call-to-Action
+        description: "Reply or share focused"
+        examples:
+          - "Thoughts?"
+          - "Agree or disagree?"
+          - "Share your experience!"
+      - name: Hashtags
+        count:
+          min: 0
+          max: 3
+        style: "minimal usage"
+    character_limits:
+      post: 500
+      description: "keep concise for engagement"
+    best_practices:
+      - "Authentic voice"
+      - "Reply to comments"
+      - "Use threads for storytelling"
+      - "Post images for higher engagement"
+    viral_patterns:
+      - "Hot takes and opinions"
+      - "Personal stories"
+      - "Ask me anything (AMA)"
+      - "Behind-the-scenes insights"
+
+  facebook:
+    name: Facebook
+    type: text-post | video-script
+    duration:
+      video_min: 30
+      video_max: 240
+      video_recommended: 60
+    content_style:
+      hook_style: "shareable statement or question"
+      opening: "community-focused"
+      pacing: "moderate, accessible"
+      tone: "community-oriented, friendly"
+    structure:
+      - name: Hook
+        description: "Shareable opener"
+        examples:
+          - "Here's something I learned..."
+          - "Who else deals with..."
+          - "Quick question for my community:"
+      - name: Content
+        description: "Community-focused content"
+        format: "Varied formats - text, image, video, link"
+      - name: Call-to-Action
+        description: "Engagement or action-oriented"
+        examples:
+          - "Let me know your thoughts!"
+          - "Share this with someone who needs it!"
+          - "Link in comments!"
+      - name: Hashtags
+        count:
+          min: 0
+          max: 5
+        style: "strategic usage"
+    character_limits:
+      post: 63206
+      description: "more space but keep concise for engagement"
+    best_practices:
+      - "Engage with comments"
+      - "Use native video uploads"
+      - "Post during peak hours"
+      - "Join relevant groups"
+    viral_patterns:
+      - "Community questions"
+      - "Inspirational stories"
+      - "How-to guides"
+      - "Local/community focus"
+
+  blog:
+    name: Blog
+    type: blog-post
+    word_count:
+      min: 500
+      max: 2500
+      recommended: 1000
+    content_style:
+      hook_style: "compelling headline and intro"
+      opening: "clear value proposition"
+      pacing: "deliberate, scannable"
+      tone: "informative, SEO-optimized"
+    structure:
+      - name: Hook (Headline + Intro)
+        description: "Compelling headline and introduction"
+        examples:
+          - "How to [achieve result] in [timeframe]"
+          - "The Ultimate Guide to [topic]"
+          - "Why [common belief] is Wrong"
+      - name: Content
+        description: "Long-form, SEO-optimized content"
+        format: "Headers, bullet points, scannable sections"
+        elements:
+          - "H2/H3 subheadings"
+          - "Bullet points for readability"
+          - "Internal and external links"
+          - "Optimized images"
+      - name: Call-to-Action
+        description: "Conversion or comment focused"
+        examples:
+          - "Comment below with your thoughts!"
+          - "Subscribe for more content!"
+          - "Check out our [product/service]!"
+      - name: Keywords
+        description: "SEO keywords instead of hashtags"
+        usage: "naturally throughout content"
+    character_limits:
+      title: 60
+      meta_description: 160
+      body: "500-2500 words"
+    best_practices:
+      - "SEO keyword research"
+      - "Internal linking strategy"
+      - "Optimize for featured snippets"
+      - "Include compelling images"
+      - "Mobile-optimized formatting"
+    viral_patterns:
+      - "How-to tutorials"
+      - "Listicles (10 ways to...)"
+      - "Ultimate guides"
+      - "Case studies and examples"
+      - "Industry insights and trends"
+
+content_sections:
+  hook:
+    description: "Opening that captures attention"
+    types:
+      - stop-the-scroll
+      - value-proposition
+      - question
+      - statement
+      - story-opener
+
+  content:
+    description: "Main value delivery"
+    formats:
+      - video-script
+      - text-post
+      - blog-post
+    elements:
+      - scenes
+      - key-points
+      - examples
+      - stories
+
+  cta:
+    description: "Clear action for audience"
+    types:
+      - follow
+      - like
+      - comment
+      - share
+      - visit-link
+      - purchase
+      - subscribe
+
+  hashtags:
+    description: "Platform-specific tag usage"
+    strategies:
+      - minimal: "1-3 tags (text platforms)"
+      - moderate: "3-5 tags (video platforms)"
+      - extensive: "5-10 tags (Instagram)"
+    types:
+      - broad: "High volume, high competition"
+      - niche: "Lower volume, targeted"
+      - trending: "Currently popular"
+      - branded: "Custom to brand"
+
+generation_guidelines:
+  brand_voice_consistency:
+    - "Maintain tone across all platforms"
+    - "Adapt format, not voice"
+    - "Use brand-specific language"
+    - "Reference brand values"
+
+  platform_adaptation:
+    - "Respect platform-specific limits"
+    - "Use platform-native features"
+    - "Follow platform best practices"
+    - "Adapt content length accordingly"
+
+  quality_standards:
+    - "Grammatically correct"
+    - "Platform-appropriate formatting"
+    - "Clear value delivery"
+    - "Authentic to brand"
+
+  video_generation:
+    kie_integration:
+      enabled: true  # Set to false if text-only mode
+      prompts:
+        include_visual_descriptions: true
+        include_scene_transitions: true
+        include_music_suggestions: true
+        include_style_guidance: true
+    fallback:
+      text_only: true  # If kie.ai not available, generate text scripts
+
+learning_patterns:
+  track:
+    - approval_rates
+    - rejection_reasons
+    - refinement_counts
+    - platform_performance
+    - topic_success
+
+  improve:
+    - adjust_hook_style_based_on_rejections
+    - optimize_cta_based_on_approvals
+    - refine_hashtag_strategy
+    - adapt_content_length
+
+  user_preferences:
+    - section_order
+    - hashtag_style
+    - cta_preference
+    - tone_adjustments

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(bmad:bmb:workflows:edit-workflow)",
+      "Skill(bmad:bmb:workflows:edit-workflow:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

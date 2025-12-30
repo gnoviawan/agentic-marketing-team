@@ -1,0 +1,346 @@
+---
+
+name: 'step-05-export'
+description: 'Export approved content pieces, generate batch summary and JSON, and prepare final deliverables'
+
+<!-- Path Definitions -->
+
+workflow_path: '{project-root}/_bmad/marketing-agent-team/workflows/content-creation'
+
+# File References (all use {variable} format in file)
+
+thisStepFile: '{workflow_path}/steps/step-05-export.md'
+nextStepFile: '{workflow_path}/steps/step-06-complete.md'
+workflowFile: '{workflow_path}/workflow.md'
+sessionStatePath: '{output_folder}/marketing-content/session-state.yaml'
+contentOutputDir: '{output_folder}/marketing-content/{brand}/{date}/'
+batchDir: '{output_folder}/marketing-content/{brand}/{date}/batch/'
+batchSummaryTemplate: '{workflow_path}/templates/batch-summary-template.md'
+
+# Output Paths
+
+batchSummaryFile: '{batchDir}/batch-summary-{date}.md'
+batchApiFile: '{batchDir}/batch-api-{date}.json'
+
+---
+
+# Step 5: Content Export
+
+## STEP GOAL:
+
+To export all approved content pieces in multiple formats (individual files, batch summary, and JSON API export) and prepare final deliverables.
+
+## MANDATORY EXECUTION RULES (READ FIRST):
+
+### Universal Rules:
+
+- 🛑 NEVER generate content without user input
+- 📖 CRITICAL: Read the complete step file before taking any action
+- 🔄 CRITICAL: When loading next step with 'C', ensure entire file is read
+- 📋 YOU ARE A FACILITATOR, not a content generator
+
+### Role Reinforcement:
+
+- ✅ You are a Content Creation Architect and Marketing Strategist
+- ✅ If you already have been given a name, communication_style and persona, continue to use those while playing this new role
+- ✅ We engage in collaborative dialogue, not command-response
+- ✅ You bring content organization and export expertise
+- ✅ Maintain collaborative professional tone throughout
+
+### Step-Specific Rules:
+
+- 🎯 Focus ONLY on exporting approved content
+- 🚫 FORBIDDEN to modify content during export
+- 💬 Generate all export formats automatically
+- 🚪 CREATE individual files, batch summary, and JSON export
+- 💾 ALWAYS create export files with proper formatting
+
+## EXECUTION PROTOCOLS:
+
+- 🎯 Show export progress for each format
+- 💾 Create all export files in correct locations
+- 📖 Update session state with export completion
+- 🚫 FORBIDDEN to load next step until exports are complete
+
+## CONTEXT BOUNDARIES:
+
+- Approved pieces from step 04 are available
+- Session state contains approval decisions
+- Individual piece files already exist in platform directories
+- Export creates additional consolidated files
+
+---
+
+## EXPORT PROCESS:
+
+### 1. Pre-Export Verification
+
+Confirm approved pieces:
+
+"**Export Preparation**
+
+I'll be exporting **{approvedCount}** approved content pieces:
+
+**Platform Breakdown:**
+- TikTok: {count} approved
+- Instagram: {count} approved
+- YouTube: {count} approved
+- Threads: {count} approved
+- Facebook: {count} approved
+- Blog: {count} approved
+
+**Export Formats:**
+1. **Individual Files** — Already saved in platform directories
+2. **Batch Summary** — Markdown document with all pieces
+3. **JSON Export** — Structured data for API posting
+
+**Output Location:** `{batchDir}`
+
+Ready to proceed with export?"
+
+### 2. Generate Batch Summary
+
+Load `{batchSummaryTemplate}` and create `{batchSummaryFile}`:
+
+```markdown
+---
+type: batch-summary
+brand: {brand_name}
+date: {YYYY-MM-DD}
+session_id: {session_id}
+generated_at: {timestamp}
+total_pieces: {total}
+approved_pieces: {approved}
+approval_rate: {percentage}%
+platforms: {list}
+---
+
+# Content Creation Batch Summary
+
+**Date:** {YYYY-MM-DD}
+**Brand:** {brand_name}
+**Session ID:** {session_id}
+
+## Content Strategy
+
+**Topic:** {topic}
+**Goal:** {goal}
+**Mode:** {mode}
+
+## Content Plan
+
+{if content plan exists, include summary}
+
+## Generated Content
+
+### TikTok ({count} pieces)
+
+#### Piece 1: {topic-slug}
+**File:** {filename}
+**Status:** approved
+**Hook:** {hook excerpt}
+**Refinements:** {count}
+
+[Repeat for each piece]
+
+### Instagram Reels ({count} pieces)
+[Same structure]
+
+### YouTube Shorts ({count} pieces)
+[Same structure]
+
+### Threads ({count} pieces)
+[Same structure]
+
+### Facebook ({count} pieces)
+[Same structure]
+
+### Blog ({count} pieces)
+[Same structure]
+
+## Session Statistics
+
+**Total Generated:** {total} pieces
+**Approved:** {approved} pieces
+**Refined:** {refined} pieces
+**Rejected:** {rejected} pieces
+**Approval Rate:** {percentage}%
+
+**Platform Performance:**
+- TikTok: {approved}/{total} ({rate}%)
+- Instagram: {approved}/{total} ({rate}%)
+- YouTube: {approved}/{total} ({rate}%)
+- Threads: {approved}/{total} ({rate}%)
+- Facebook: {approved}/{total} ({rate}%)
+- Blog: {approved}/{total} ({rate}%)
+
+## Learning Data
+
+**User Feedback Patterns:**
+{if rejection reasons collected, summarize patterns}
+
+**Quality Insights:**
+{if available, include key learnings}
+
+---
+*Generated by Content Creation Workflow*
+*Session ID: {session_id}*
+```
+
+### 3. Generate JSON API Export
+
+Create `{batchApiFile}` with structured data:
+
+```json
+{
+  "session_id": "{session_id}",
+  "brand": "{brand_name}",
+  "generated_at": "{YYYY-MM-DD}",
+  "topic": "{topic}",
+  "goal": "{goal}",
+  "mode": "{mode}",
+  "statistics": {
+    "total_pieces": {total},
+    "approved_pieces": {approved},
+    "refined_pieces": {refined},
+    "rejected_pieces": {rejected},
+    "approval_rate": "{percentage}%"
+  },
+  "content": [
+    {
+      "id": "piece-1",
+      "platform": "tiktok",
+      "type": "video-script",
+      "file": "{filename}",
+      "status": "approved",
+      "hook": "{hook content}",
+      "content": "{main content}",
+      "cta": "{CTA content}",
+      "hashtags": ["#tag1", "#tag2"],
+      "refinements": {count},
+      "created_at": "{timestamp}",
+      "approved_at": "{timestamp}"
+    },
+    {
+      "id": "piece-2",
+      "platform": "instagram",
+      "type": "video-script",
+      "file": "{filename}",
+      "status": "approved",
+      "hook": "{hook content}",
+      "content": "{main content}",
+      "cta": "{CTA content}",
+      "hashtags": ["#tag1", "#tag2"],
+      "refinements": {count},
+      "created_at": "{timestamp}",
+      "approved_at": "{timestamp}"
+    }
+    // ... repeat for all approved pieces
+  ]
+}
+```
+
+### 4. Verify Individual Files
+
+Confirm all individual piece files exist and are properly formatted:
+
+- Check each platform directory
+- Verify all approved pieces have `status: approved` in frontmatter
+- Confirm file naming convention matches: `{YYYY-MM-DD}-{platform}-{sequence}-{topic-slug}.md`
+- Validate YAML frontmatter syntax
+
+### 5. Export Summary Display
+
+Show export completion summary:
+
+"**✓ Export Complete!**
+
+**Generated Files:**
+
+**1. Individual Content Pieces:** {approved} files
+   Location: `{contentOutputDir}{platform}/`
+   Format: Markdown (.md)
+
+**2. Batch Summary:** 1 file
+   Location: `{batchSummaryFile}`
+   Format: Markdown (.md)
+   Contains: All approved pieces with metadata
+
+**3. JSON API Export:** 1 file
+   Location: `{batchApiFile}`
+   Format: JSON (.json)
+   Contains: Structured data for API posting
+
+**Content Ready for Posting:**
+- TikTok: {count} pieces ✓
+- Instagram: {count} pieces ✓
+- YouTube: {count} pieces ✓
+- Threads: {count} pieces ✓
+- Facebook: {count} pieces ✓
+- Blog: {count} pieces ✓
+
+**Next Steps:**
+1. Review individual files in platform directories
+2. Use batch summary for overview
+3. Use JSON export for automated posting (if available)
+4. Proceed to session completion"
+
+### 6. Update Session State
+
+Update `{sessionStatePath}`:
+
+```yaml
+---
+# ... existing fields ...
+stepsCompleted: [1, 2, 3, 4, 5]
+lastStep: 'export'
+exportCompletedAt: "[timestamp]"
+exportFiles:
+  individual: {count}
+  batchSummary: "{batchSummaryFile}"
+  batchApi: "{batchApiFile}"
+---
+```
+
+### 7. Present MENU OPTIONS
+
+Display: **Proceeding to Session Completion...**
+
+#### EXECUTION RULES:
+
+- This is an auto-proceed step - no user choice needed
+- Exports are automatically generated
+- Use menu handling logic section below
+
+#### Menu Handling Logic:
+
+- After export completion, immediately load, read entire file, then execute `{nextStepFile}` to begin Session Completion
+
+---
+
+## 🚨 SYSTEM SUCCESS/FAILURE METRICS
+
+### ✅ SUCCESS:
+
+- All approved pieces exported
+- Batch summary created with all content
+- JSON export created with valid syntax
+- Individual files verified and properly formatted
+- Export files saved to correct locations
+- Session state updated with export completion
+- Frontmatter updated with `stepsCompleted: [1, 2, 3, 4, 5]`
+
+### ❌ SYSTEM FAILURE:
+
+- Missing approved pieces in export
+- Invalid JSON syntax
+- Batch summary incomplete
+- Files not saved to correct locations
+- Not updating session state properly
+- Exporting rejected pieces
+
+**Master Rule:** Skipping steps, optimizing sequences, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+
+## CRITICAL STEP COMPLETION NOTE
+
+ONLY WHEN all exports are complete and files are saved, will you then immediately load, read entire file, then execute `{nextStepFile}` to begin Session Completion.
