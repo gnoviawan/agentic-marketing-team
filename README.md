@@ -34,11 +34,19 @@ This module provides a comprehensive digital marketing system with 7 specialized
 
 ### For End Users (npm)
 
-Install the module using BMAD:
+Install the module using npx:
 
 ```bash
-bmad install marketing-agent-team
+npx marketing-agent-team
 ```
+
+Or via npm:
+
+```bash
+npm install marketing-agent-team
+```
+
+> **Note:** This requires BMAD Core to be installed in your project. The module will be installed to `_bmad/marketing-agent-team/`.
 
 ### For Developers (Local Setup)
 
@@ -125,7 +133,7 @@ During installation, you'll be prompted to:
 Start with the Brand Archetype Agent to establish your brand personality:
 
 ```
-agent brand-archetype-agent
+/bmad:marketing-agent-team:agents:brand-archetype-agent
 ```
 
 Then use trigger **DB** (Discover Brand Archetype) to begin the interactive brand discovery session.
@@ -143,7 +151,7 @@ The agent will guide you through:
 Once your brand profile is established, use the Content Creation Agent:
 
 ```
-agent content-creation-agent
+/bmad:marketing-agent-team:agents:content-creation-agent
 ```
 
 Use trigger **GC** (Generate Content Batch) to create platform-specific content.
@@ -168,7 +176,7 @@ Every approval or rejection trains the RLHF system to better match your preferen
 After posting content, use the Analytics Agent:
 
 ```
-agent analytics-agent
+/bmad:marketing-agent-team:agents:analytics-agent
 ```
 
 Use trigger **TP** (Track Performance) and provide your live content links.
@@ -276,7 +284,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 1. **Establish Brand Personality**
    ```
-   agent brand-archetype-agent
+   /bmad:marketing-agent-team:agents:brand-archetype-agent
    > DB
    ```
    - Go through the brand discovery session
@@ -286,7 +294,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 2. **Generate Launch Content**
    ```
-   agent content-creation-agent
+   /bmad:marketing-agent-team:agents:content-creation-agent
    > GC
    ```
    - Topic: "Brand launch - 5-day fitness challenge"
@@ -312,7 +320,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 1. **Analyze Competitors**
    ```
-   agent competitor-analysis-agent
+   /bmad:marketing-agent-team:agents:competitor-analysis-agent
    > CA
    ```
    - Identify top 3 competitors on Threads
@@ -321,7 +329,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 2. **Create Repurposed Content**
    ```
-   agent content-creation-agent
+   /bmad:marketing-agent-team:agents:content-creation-agent
    > GC
    ```
    - Topic: Adapt competitor's winning angle to your brand
@@ -330,7 +338,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 3. **Monitor Performance**
    ```
-   agent analytics-agent
+   /bmad:marketing-agent-team:agents:analytics-agent
    > TP
    ```
    - Track engagement against competitor benchmarks
@@ -343,7 +351,7 @@ Each platform has a config file in `data/platform-configs/`:
 
 1. **Design Campaign**
    ```
-   agent campaign-orchestrator-agent
+   /bmad:marketing-agent-team:agents:campaign-orchestrator-agent
    > DC
    ```
    - Campaign: "New product launch"
@@ -480,7 +488,7 @@ This module is currently:
 - Real-time optimization
 
 To upgrade:
-1. Re-run installer: `bmad install marketing-agent-team`
+1. Re-run installer: `npx marketing-agent-team`
 2. Select higher tier
 3. Additional agents and workflows will be installed
 
@@ -533,4 +541,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Ready to transform your marketing?** Start with: `agent brand-archetype-agent` and trigger **DB**
+**Ready to transform your marketing?** Start with: `/bmad:marketing-agent-team:agents:brand-archetype-agent` and trigger **DB**

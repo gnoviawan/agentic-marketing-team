@@ -190,7 +190,7 @@ async function showNextSteps() {
   log('   _bmad/marketing-agent-team/TODO.md', 'bright');
   console.log('');
   log('For full documentation, visit:', 'cyan');
-  log('https://github.com/yourusername/marketing-agent-team', 'bright');
+  log('https://github.com/gnoviawan/agentic-marketing-team', 'bright');
   console.log('');
 }
 
