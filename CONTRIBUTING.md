@@ -7,8 +7,8 @@ Welcome, collaborator! This guide will help you get set up and start contributin
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd digital-marketing
+git clone https://github.com/gnoviawan/agentic-marketing-team.git
+cd agentic-marketing-team
 ```
 
 ### 2. Run Development Setup
@@ -43,7 +43,7 @@ Try running a marketing agent:
 ## Project Structure
 
 ```
-digital-marketing/
+agentic-marketing-team/
 ├── _bmad/                          # BMAD Core + installed modules
 │   ├── core/                       # BMAD Core (don't modify)
 │   ├── bmb/                        # BMAD Module Builder (don't modify)

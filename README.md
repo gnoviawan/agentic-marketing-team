@@ -46,8 +46,8 @@ If you're developing or contributing to this module:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd digital-marketing
+git clone https://github.com/gnoviawan/agentic-marketing-team.git
+cd agentic-marketing-team
 
 # Run development setup (registers slash commands)
 node _bmad-output/bmb-creations/marketing-agent-team/setup-dev.js
@@ -492,8 +492,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete contributor guide.
 
 ```bash
 # 1. Clone and setup
-git clone <repository-url>
-cd digital-marketing
+git clone https://github.com/gnoviawan/agentic-marketing-team.git
+cd agentic-marketing-team
 node _bmad-output/bmb-creations/marketing-agent-team/setup-dev.js
 
 # 2. Restart Claude Code
